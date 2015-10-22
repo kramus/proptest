@@ -38,3 +38,29 @@ prop("2010");prop("2011");prop("2012");prop("2013");prop("2014")
 
 #When using lapply the print message appear at the beginning...
 #lapply(2004:2014, FUN = prop)
+
+
+a <- prop("2004")
+b <- prop("2005")
+c <- prop("2006")
+d <- prop("2007")
+e <- prop("2008")
+f <- prop("2009")
+g <- prop("2010")
+h <- prop("2011")
+i <- prop("2012")
+j <- prop("2013")
+k <- prop("2014")
+lista <- list(a,b,c,d,e,f,g,h,i,j,k)
+vec <- vector()
+p_value <- sapply(1:11, function(x){
+        if (x == 5 | x == 8) {
+                vec[x] <- lista[[x]][[1]]
+        }
+        else {
+                vec[x] <- lista[[x]][[3]]
+        }
+        })
+p_value <- round(p_value, digits = 4)
+Year <- 2004:2014
+
