@@ -1,6 +1,6 @@
 ---
 title: "Proportions Test (MSM vs IDU)"
-output: html_document
+output: word_document
 date: "October 21, 2015"
 ---
 ###**Mortality Analysis for the period 2003 to 2014**
@@ -115,5 +115,5 @@ kable(xtable(tabla), format= "pandoc", digits = 4, align = "l")
 ```
 <br>
 
-We can see that for years 2005, 2008, 2012 the results were not statistically significant (`r p_value[c(2,5,9)]` respectively). Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. 
+We can see that for years 2005, 2008, 2009, 2010 and 2012 the results were not statistically significant (`r p_value[c(2,5,6,7,9)]` respectively). Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. 
 
