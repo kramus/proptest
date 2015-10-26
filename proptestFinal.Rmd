@@ -1,8 +1,8 @@
 ---
-title: "PropTestFinal"
+title: "Preliminary Mortality Analysis"
 author: "Mark Machin"
 date: "October 26, 2015"
-output: html_document
+output: word_document
 ---
 ###**Mortality Analysis for the period 2003 to 2014**
 ####*HIV Mortality Analysis*
@@ -56,13 +56,15 @@ pandoc.table(dat)
 To perform the analysis we used a Poisson model to compare the proportions between MSM and IDU. Figure 3 show the crude model. 
 <br>  
 
-![graphic 3]()
+![graphic 3](https://github.com/kramus/proptest/blob/master/crudemodel.png?raw=true)
 <br>  
 
-In order to validate the model, we need to evaluate interaction between predictor variable year. Figure 4 show a significance in the likelihood-ratio test (p-value < 0.00001).
+In order to validate the model, we need to evaluate interaction in the predictor variables. Figure 4 show a significance in the likelihood-ratio test (p-value < 0.00001).
 <br>  
-![graphic 4]()
+![graphic 4](https://raw.githubusercontent.com/kramus/proptest/master/LRtest.png)
+<br>  
 
+Table 1 show the respective p-values obtained in the Poisson model for the specific years: 
 
 
 ```{r, echo=FALSE, warning=FALSE,message=FALSE, error=FALSE}
@@ -74,4 +76,17 @@ kable(xtable(tabla), format= "pandoc", align = "l")
 ```
 <br>
 
-We can see that for years 2005, 2008, 2009 and 2012 the results were not statistically significant (`r p_value[c(2,5,6,9)]` respectively). Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. 
+We can see that for years 2005, 2008, 2009 and 2012 the results were not statistically significant (`r p_value[c(2,5,6,9)]` respectively). 
+
+####JoinPoint Software
+We used JoinPoint Software to verify if there were significant differences in the absolute differences calculated using the CDC mathematical model across the period of study. We ran the analysis for both MSM and IDU groups. Figure 5 show no significant annual percent change for the group MSM.
+<br> 
+![graphic 5](https://raw.githubusercontent.com/kramus/proptest/master/joinmsm.bmp)
+<br>  
+Likewise, there was no statistical difference in the annual percent change for the IDU group.
+<br>  
+![graphic 6](https://raw.githubusercontent.com/kramus/proptest/master/joinidu.bmp)
+<br>  
+
+Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. <br>  
+<br>  
