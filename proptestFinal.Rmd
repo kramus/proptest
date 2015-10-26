@@ -2,7 +2,7 @@
 title: "Preliminary Mortality Analysis"
 author: "Mark Machin"
 date: "October 26, 2015"
-output: word_document
+output: html_document
 ---
 ###**Mortality Analysis for the period 2003 to 2014**
 ####*HIV Mortality Analysis*
@@ -87,6 +87,16 @@ Likewise, there was no statistical difference in the annual percent change for t
 <br>  
 ![graphic 6](https://github.com/kramus/proptest/blob/master/joinidu.png?raw=true)
 <br>  
+
+
+We found a statistical difference in the annual percent change for both groups (MSM and IDU) when we used the number of deaths as the dependent variable (figure 7 and 8, respectively): 
+<br> 
+![graphic 7](https://github.com/kramus/proptest/blob/master/deathmsm.jpg?raw=true)
+<br>  
+<br>  
+![graphic 8](https://github.com/kramus/proptest/blob/master/deathidu.jpg?raw=true)
+<br>  
+<br> 
 
 Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. <br>  
 <br>  
