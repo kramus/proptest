@@ -1,0 +1,77 @@
+---
+title: "PropTestFinal"
+author: "Mark Machin"
+date: "October 26, 2015"
+output: html_document
+---
+###**Mortality Analysis for the period 2003 to 2014**
+####*HIV Mortality Analysis*
+
+<br>
+In order to explore HIV Mortality in Puerto Rico, we conducted a crude analysis using the data from the HIV Surveillance System for 2003 to 2014. The trend in HIV mortality can be seeing in figure 1:
+<br>  
+![graphic 1.](https://raw.githubusercontent.com/kramus/proptest/master/overall.png)
+<br>
+Figure 1 shows the crude HIV mortality trend in Puerto Rico for the period 2003-2014. This preliminar analysis shows a decreasing HIV trend of 4.6% (10.0% in 2003 compared with 5.6% in 2014) in Puerto Rico. In figure 2 we stratified by mode of transmission (Men who have Sex with Men, Injection Drugs Users and Heterosexual Contact):  
+<br>  
+![graphic 2](https://github.com/kramus/proptest/blob/master/transgroups.png?raw=true)
+<br>  
+Figure 2 also shows a decreasing trend in HIV in Puerto Rico. In the IDU group, we can see a decrease of almost 7% which might explain the reason why the overall mortality is also decreasing. 
+<br>        
+<br>
+
+####*Comparing deaths of Men who have Sex with Men (MSM) and Injected Drugs Users (IDU)*
+
+In order to compare deaths among MSM and IDU, we calculate the absolute difference between years (according to the CDC mathematical model) and verify whether there was a significant difference between these groups. The raw file can be accessed [here.](https://github.com/kramus/proptest/blob/master/propt3.csv)
+<br>  
+The structure of the data is as follows:
+```{r, include=FALSE}
+library(plyr)
+library(dplyr)
+library(lattice)
+library(ggplot2)
+library(markdown)
+library(pander)
+library(knitr)
+library(xtable)
+```
+```{r, echo=FALSE}
+data <- read.csv(".\\propt3.csv")
+data$case <- factor(data$case, levels(data$case)[c(2,1)]) 
+#one way of changing order of levels
+data$type <- relevel(data$type, "msm") #another way of changing order of levels
+data1 <- xtabs(count ~type+case+year,data=data)
+ftable(data1)
+```
+<br>
+The absolute differences of MSM and IDU cases for 2004-2014 are:
+```{r, echo=FALSE}
+dat <- read.csv(".\\propt.csv")
+dat <- dat[,c(1,6,7)]
+names(dat)[2] <- "MSM"
+names(dat)[3] <- "IDU"
+pandoc.table(dat)
+```
+<br>  
+To perform the analysis we used a Poisson model to compare the proportions between MSM and IDU. Figure 3 show the crude model. 
+<br>  
+
+![graphic 3]()
+<br>  
+
+In order to validate the model, we need to evaluate interaction between predictor variable year. Figure 4 show a significance in the likelihood-ratio test (p-value < 0.00001).
+<br>  
+![graphic 4]()
+
+
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE, error=FALSE}
+
+p_value <- c("< 0.0001", "0.205", "0.013", "0.017", "0.190","0.084","0.025","< 0.0001", "0.222", "< 0.0001", "0.010")
+Year <- 2004:2014
+tabla <- cbind(Year,p_value)
+kable(xtable(tabla), format= "pandoc", align = "l")
+```
+<br>
+
+We can see that for years 2005, 2008, 2009 and 2012 the results were not statistically significant (`r p_value[c(2,5,6,9)]` respectively). Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. 
