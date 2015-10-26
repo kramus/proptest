@@ -81,11 +81,11 @@ We can see that for years 2005, 2008, 2009 and 2012 the results were not statist
 ####JoinPoint Software
 We used JoinPoint Software to verify if there were significant differences in the absolute differences calculated using the CDC mathematical model across the period of study. We ran the analysis for both MSM and IDU groups. Figure 5 show no significant annual percent change for the group MSM.
 <br> 
-![graphic 5](https://raw.githubusercontent.com/kramus/proptest/master/joinmsm.bmp)
+![graphic 5](https://github.com/kramus/proptest/blob/master/joinmsm.png?raw=true)
 <br>  
 Likewise, there was no statistical difference in the annual percent change for the IDU group.
 <br>  
-![graphic 6](https://raw.githubusercontent.com/kramus/proptest/master/joinidu.bmp)
+![graphic 6](https://github.com/kramus/proptest/blob/master/joinidu.png?raw=true)
 <br>  
 
 Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. <br>  
