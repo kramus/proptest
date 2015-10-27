@@ -64,7 +64,7 @@ In order to validate the model, we need to evaluate interaction in the predictor
 ![graphic 4](https://raw.githubusercontent.com/kramus/proptest/master/LRtest.png)
 <br>  
 
-Table 1 show the respective p-values obtained in the Poisson model for the specific years: 
+The likelihood-ratio test result indicates an interaction between the predictor variables. Thus the model with interaction was used in order to obtain the p-values. Table 1 show the respective p-values obtained in the Poisson model for the specific years: 
 
 
 ```{r, echo=FALSE, warning=FALSE,message=FALSE, error=FALSE}
