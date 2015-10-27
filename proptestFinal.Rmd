@@ -35,15 +35,8 @@ library(pander)
 library(knitr)
 library(xtable)
 ```
-```{r, echo=FALSE}
-data <- read.csv(".\\propt3.csv")
-data$case <- factor(data$case, levels(data$case)[c(2,1)]) 
-#one way of changing order of levels
-data$type <- relevel(data$type, "msm") #another way of changing order of levels
-data1 <- xtabs(count ~type+case+year,data=data)
-ftable(data1)
-```
 <br>
+
 The absolute differences of MSM and IDU cases for 2004-2014 are:
 ```{r, echo=FALSE}
 dat <- read.csv(".\\propt.csv")

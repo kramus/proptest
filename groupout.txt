@@ -1,0 +1,269 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data Analysis      
+      
+      -------------------------------------------------------------------------------
+            name:  <unnamed>
+             log:  C:\Users\Estudiante\Desktop\groupout.smcl
+        log type:  smcl
+       opened on:  27 Oct 2015, 15:20:04
+      
+     1 . do "C:\Users\ESTUDI~1\AppData\Local\Temp\STD02000000.tmp"
+      
+     2 . glm cat_dif cat_year if tipo==1 , fam(poi) lnoff(cat_caso) ef
+      
+      Iteration 0:   log likelihood = -65.428122  
+      Iteration 1:   log likelihood =  -65.33026  
+      Iteration 2:   log likelihood = -65.330241  
+      Iteration 3:   log likelihood = -65.330241  
+      
+      Generalized linear models                          No. of obs      =        11
+      Optimization     : ML                              Residual df     =         9
+                                                         Scale parameter =         1
+      Deviance         =  75.11120621                    (1/df) Deviance =   8.34569
+      Pearson          =  69.37660476                    (1/df) Pearson  =  7.708512
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  12.24186
+      Log likelihood   = -65.33024088                    BIC             =  53.53015
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           cat_dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+          cat_year |   1.361609   .0749083     5.61   0.000      1.22243    1.516635
+             _cons |   .0604094   .0088213   -19.22   0.000     .0453741     .080427
+      ln(cat_caso) |          1  (exposure)
+      ------------------------------------------------------------------------------
+      
+     3 . glm cat_dif cat_year if tipo==2 , fam(poi) lnoff(cat_caso) ef
+      
+      Iteration 0:   log likelihood = -36.310818  
+      Iteration 1:   log likelihood = -36.024417  
+      Iteration 2:   log likelihood = -36.024337  
+      Iteration 3:   log likelihood = -36.024337  
+      
+      Generalized linear models                          No. of obs      =        11
+      Optimization     : ML                              Residual df     =         9
+                                                         Scale parameter =         1
+      Deviance         =  .4012252408                    (1/df) Deviance =  .0445806
+      Pearson          =  .4019837064                    (1/df) Pearson  =  .0446649
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  6.913516
+      Log likelihood   = -36.02433714                    BIC             = -21.17983
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           cat_dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+          cat_year |    1.02833   .0300414     0.96   0.339      .971104    1.088928
+             _cons |   .1156679   .0076991   -32.41   0.000     .1015207    .1317865
+      ln(cat_caso) |          1  (exposure)
+      ------------------------------------------------------------------------------
+      
+     4 . 
+     5 . 
+     6 . *Comparacion x tipo
+     7 . 
+     8 . glm cat_dif i.tipo  , fam(poi) lnoff(cat_caso) ef
+      
+      Iteration 0:   log likelihood = -122.70106  
+      Iteration 1:   log likelihood = -117.46875  
+      Iteration 2:   log likelihood = -117.45365  
+      Iteration 3:   log likelihood = -117.45365  
+      
+      Generalized linear models                          No. of obs      =        22
+      Optimization     : ML                              Residual df     =        20
+                                                         Scale parameter =         1
+      Deviance         =  107.7105734                    (1/df) Deviance =  5.385529
+      Pearson          =  109.6556953                    (1/df) Pearson  =  5.482785
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  10.85942
+      Log likelihood   =  -117.453649                    BIC             =  45.88972
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           cat_dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+            2.tipo |   .9981067   .0623969    -0.03   0.976     .8830064     1.12821
+             _cons |   .1227134   .0068386   -37.65   0.000     .1100161    .1368761
+      ln(cat_caso) |          1  (exposure)
+      ------------------------------------------------------------------------------
+      
+     9 . 
+    10 . 
+    11 . *Eval interaccion
+    12 . 
+    13 . *Modelo con interaccion
+    14 . xi: glm cat_dif i.tipo*i.cat_year  , fam(poi) lnoff(cat_caso) 
+      i.tipo            _Itipo_1-2          (naturally coded; _Itipo_1 omitted)
+      i.cat_year        _Icat_year_1-4      (naturally coded; _Icat_year_1 omitted)
+      i.tipo*i.cat_~r   _ItipXcat_#_#       (coded as above)
+      
+      Iteration 0:   log likelihood = -73.505477  
+      Iteration 1:   log likelihood = -63.698358  
+      Iteration 2:   log likelihood = -63.598454  
+      Iteration 3:   log likelihood = -63.598362  
+      Iteration 4:   log likelihood = -63.598362  
+      
+      Generalized linear models                          No. of obs      =        22
+      Optimization     : ML                              Residual df     =        14
+                                                         Scale parameter =         1
+      Deviance         =  2.81997e-14                    (1/df) Deviance =  2.01e-15
+      Pearson          =  3.78035e-22                    (1/df) Pearson  =  2.70e-23
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  6.508942
+      Log likelihood   =  -63.5983623                    BIC             = -43.27459
+      
+      -------------------------------------------------------------------------------
+                    |                 OIM
+            cat_dif |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+           _Itipo_2 |   .1610675   .1173108     1.37   0.170    -.0688575    .3909925
+       _Icat_year_2 |  -.7766441   .1981717    -3.92   0.000    -1.165054   -.3882347
+       _Icat_year_3 |   .8300005   .1324948     6.26   0.000     .5703156    1.089685
+       _Icat_year_4 |   .2648098   .2022524     1.31   0.190    -.1315976    .6612171
+      _ItipXcat_2_2 |   .8371762   .2099622     3.99   0.000     .4256578    1.248695
+      _ItipXcat_2_3 |  -.7859775   .1519553    -5.17   0.000    -1.083804   -.4881506
+      _ItipXcat_2_4 |  -.1603415   .2293634    -0.70   0.485    -.6098855    .2892024
+              _cons |  -2.299131   .1072113   -21.44   0.000    -2.509261   -2.089001
+       ln(cat_caso) |          1  (exposure)
+      -------------------------------------------------------------------------------
+      
+    15 . estimates store model1
+      
+    16 . *Modelo crudo
+    17 . xi: glm cat_dif i.tipo i.cat_year  , fam(poi) lnoff(cat_caso) 
+      i.tipo            _Itipo_1-2          (naturally coded; _Itipo_1 omitted)
+      i.cat_year        _Icat_year_1-4      (naturally coded; _Icat_year_1 omitted)
+      
+      Iteration 0:   log likelihood = -110.31651  
+      Iteration 1:   log likelihood = -105.70126  
+      Iteration 2:   log likelihood = -105.68673  
+      Iteration 3:   log likelihood = -105.68673  
+      
+      Generalized linear models                          No. of obs      =        22
+      Optimization     : ML                              Residual df     =        17
+                                                         Scale parameter =         1
+      Deviance         =  84.17673433                    (1/df) Deviance =  4.951573
+      Pearson          =  81.20986603                    (1/df) Pearson  =  4.777051
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  10.06243
+      Log likelihood   = -105.6867295                    BIC             =  31.62901
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           cat_dif |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+          _Itipo_2 |   .0088618   .0625797     0.14   0.887    -.1137921    .1315157
+      _Icat_year_2 |  -.0453302   .0650031    -0.70   0.486    -.1727339    .0820736
+      _Icat_year_3 |   .2504093   .0634197     3.95   0.000     .1261089    .3747096
+      _Icat_year_4 |   .1331662   .0951234     1.40   0.162    -.0532722    .3196045
+             _cons |  -2.173653   .0669605   -32.46   0.000    -2.304893   -2.042413
+      ln(cat_caso) |          1  (exposure)
+      ------------------------------------------------------------------------------
+      
+    18 . lrtest model1
+      
+      Likelihood-ratio test                                 LR chi2(3)  =     84.18
+      (Assumption: . nested in model1)                      Prob > chi2 =    0.0000
+      
+    19 . 
+    20 . *Se usa modelo con interaccion
+    21 . xi: glm cat_dif i.tipo*i.cat_year  , fam(poi) lnoff(cat_caso) 
+      i.tipo            _Itipo_1-2          (naturally coded; _Itipo_1 omitted)
+      i.cat_year        _Icat_year_1-4      (naturally coded; _Icat_year_1 omitted)
+      i.tipo*i.cat_~r   _ItipXcat_#_#       (coded as above)
+      
+      Iteration 0:   log likelihood = -73.505477  
+      Iteration 1:   log likelihood = -63.698358  
+      Iteration 2:   log likelihood = -63.598454  
+      Iteration 3:   log likelihood = -63.598362  
+      Iteration 4:   log likelihood = -63.598362  
+      
+      Generalized linear models                          No. of obs      =        22
+      Optimization     : ML                              Residual df     =        14
+                                                         Scale parameter =         1
+      Deviance         =  2.81997e-14                    (1/df) Deviance =  2.01e-15
+      Pearson          =  3.78035e-22                    (1/df) Pearson  =  2.70e-23
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  6.508942
+      Log likelihood   =  -63.5983623                    BIC             = -43.27459
+      
+      -------------------------------------------------------------------------------
+                    |                 OIM
+            cat_dif |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      --------------+----------------------------------------------------------------
+           _Itipo_2 |   .1610675   .1173108     1.37   0.170    -.0688575    .3909925
+       _Icat_year_2 |  -.7766441   .1981717    -3.92   0.000    -1.165054   -.3882347
+       _Icat_year_3 |   .8300005   .1324948     6.26   0.000     .5703156    1.089685
+       _Icat_year_4 |   .2648098   .2022524     1.31   0.190    -.1315976    .6612171
+      _ItipXcat_2_2 |   .8371762   .2099622     3.99   0.000     .4256578    1.248695
+      _ItipXcat_2_3 |  -.7859775   .1519553    -5.17   0.000    -1.083804   -.4881506
+      _ItipXcat_2_4 |  -.1603415   .2293634    -0.70   0.485    -.6098855    .2892024
+              _cons |  -2.299131   .1072113   -21.44   0.000    -2.509261   -2.089001
+       ln(cat_caso) |          1  (exposure)
+      -------------------------------------------------------------------------------
+      
+    22 . 
+    23 . lincom  _Itipo_2, rrr
+      
+       ( 1)  [cat_dif]_Itipo_2 = 0
+      
+      ------------------------------------------------------------------------------
+           cat_dif |        RRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+               (1) |   1.174764   .1378125     1.37   0.170     .9334597    1.478447
+      ------------------------------------------------------------------------------
+      
+    24 . lincom  _Itipo_2 + _ItipXcat_2_2, rrr
+      
+       ( 1)  [cat_dif]_Itipo_2 + [cat_dif]_ItipXcat_2_2 = 0
+      
+      ------------------------------------------------------------------------------
+           cat_dif |        RRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+               (1) |   2.713512    .472512     5.73   0.000     1.928899     3.81728
+      ------------------------------------------------------------------------------
+      
+    25 . lincom  _Itipo_2 + _ItipXcat_2_3, rrr
+      
+       ( 1)  [cat_dif]_Itipo_2 + [cat_dif]_ItipXcat_2_3 = 0
+      
+      ------------------------------------------------------------------------------
+           cat_dif |        RRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+               (1) |   .5353096   .0517027    -6.47   0.000     .4429881    .6468715
+      ------------------------------------------------------------------------------
+      
+    26 . lincom  _Itipo_2 + _ItipXcat_2_4, rrr
+      
+       ( 1)  [cat_dif]_Itipo_2 + [cat_dif]_ItipXcat_2_4 = 0
+      
+      ------------------------------------------------------------------------------
+           cat_dif |        RRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+               (1) |   1.000726   .1972363     0.00   0.997     .6800632    1.472588
+      ------------------------------------------------------------------------------
+      
+    27 . 
+      end of do-file
+      
