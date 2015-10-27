@@ -79,7 +79,7 @@ kable(xtable(tabla), format= "pandoc", align = "l")
 We can see that for years 2005, 2008, 2009 and 2012 the results were not statistically significant (`r p_value[c(2,5,6,9)]` respectively). 
 
 ####JoinPoint Software
-We used JoinPoint Software to verify if there were significant differences in the absolute differences calculated using the CDC mathematical model across the period of study. We ran the analysis for both MSM and IDU groups. Figure 5 show no significant annual percent change for the group MSM.
+We used JoinPoint Software to verify if there were significant differences in the absolute differences calculated using the CDC mathematical model across the period of study. We ran the analysis for both MSM and IDU groups. Figure 5 show no significant difference in the annual percent change for the group MSM.
 <br> 
 ![graphic 5](https://github.com/kramus/proptest/blob/master/joinmsm.png?raw=true)
 <br>  
