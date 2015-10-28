@@ -1,18 +1,50 @@
 ---
-title: "Preliminary Mortality Analysis"
+title: "Preliminary Analysis"
 author: "Mark Machin"
 date: "October 26, 2015"
 output: html_document
 ---
-###**Mortality Analysis for the period 2003 to 2014**
-####*HIV Mortality Analysis*
+```{r, include=FALSE}
+library(plyr)
+library(dplyr)
+library(markdown)
+library(pander)
+library(knitr)
+library(xtable)
+```
+###**Number of deaths of HIV for the period 2003 to 2014**
+<br>  
+
+####*Trend in number of deaths overall*
 
 <br>
-In order to explore HIV Mortality in Puerto Rico, we conducted a crude analysis using the data from the HIV Surveillance System for 2003 to 2014. The trend in HIV mortality can be seeing in figure 1:
+In order to explore the trend of deaths of HIV in Puerto Rico, we conducted a crude analysis using the data from the HIV Surveillance System that contain the deceases for the period 2003 to 2014. The trend in HIV deaths can be seeing in figure 1:
 <br>  
+
 ![graphic 1.](https://raw.githubusercontent.com/kramus/proptest/master/overall.png)
-<br>
-Figure 1 shows the crude HIV mortality trend in Puerto Rico for the period 2003-2014. This preliminar analysis shows a decreasing HIV trend of 4.6% (10.0% in 2003 compared with 5.6% in 2014) in Puerto Rico. In figure 2 we stratified by mode of transmission (Men who have Sex with Men, Injection Drugs Users and Heterosexual Contact):  
+<br>  
+<br>  
+Figure 1 shows the number of deceases in Puerto Rico for the period 2003-2014. This preliminar analysis shows a decreasing HIV trend in the number of deaths of about 4.6% (10.0% in 2003 compared with 5.6% in 2014) in Puerto Rico. We proceeded to calculate the percent change for every year in the study period using a mathematical model from CDC. The formula is as follows: 
+
+![formula]()
+
+<br>  
+  
+The respective percent changes are in the following table: 
+<br>  
+
+We used a Poisson model to verify whether there was a statistical significant difference in the percent changes across the period: 
+
+<br>  
+
+![overallmodel]()
+
+<br> 
+
+The model shows a statistical significant difference between the percent changes for the period of study (`p-value = 0.003`).
+
+
+In figure 2 we stratified by mode of transmission (Men who have Sex with Men, Injection Drugs Users and Heterosexual Contact):  
 <br>  
 ![graphic 2](https://github.com/kramus/proptest/blob/master/transgroups.png?raw=true)
 <br>  
@@ -24,27 +56,10 @@ Figure 2 also shows a decreasing trend in HIV in Puerto Rico. In the IDU group, 
 
 In order to compare deaths among MSM and IDU, we calculate the absolute difference between years (according to the CDC mathematical model) and verify whether there was a significant difference between these groups. The raw file can be accessed [here.](https://github.com/kramus/proptest/blob/master/propt3.csv)
 <br>  
-The structure of the data is as follows:
-```{r, include=FALSE}
-library(plyr)
-library(dplyr)
-library(lattice)
-library(ggplot2)
-library(markdown)
-library(pander)
-library(knitr)
-library(xtable)
-```
 <br>
 
 The absolute differences of MSM and IDU cases for 2004-2014 are:
-```{r, echo=FALSE}
-dat <- read.csv(".\\propt.csv")
-dat <- dat[,c(1,6,7)]
-names(dat)[2] <- "MSM"
-names(dat)[3] <- "IDU"
-pandoc.table(dat)
-```
+
 <br>  
 To perform the analysis we used a Poisson model to compare the proportions between MSM and IDU. Figure 3 show the crude model. 
 <br>  
@@ -91,5 +106,6 @@ We found a statistical difference in the annual percent change for both groups (
 <br>  
 <br> 
 
-Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. <br>  
+Further investigation will be needed in order to have a better insight of the behavior of HIV mortality in Puerto Rico. 
+<br>  
 <br>  

@@ -1,0 +1,120 @@
+. glm dif year, fam(poi) lnoff(casos) ef
+
+Iteration 0:   log likelihood = -215.14396  
+Iteration 1:   log likelihood = -213.95228  
+Iteration 2:   log likelihood = -213.95097  
+Iteration 3:   log likelihood = -213.95097  
+
+Generalized linear models                          No. of obs      =        11
+Optimization     : ML                              Residual df     =         9
+                                                   Scale parameter =         1
+Deviance         =  371.9098435                    (1/df) Deviance =  41.32332
+Pearson          =  303.8943293                    (1/df) Pearson  =  33.76604
+
+Variance function: V(u) = u                        [Poisson]
+Link function    : g(u) = ln(u)                    [Log]
+
+                                                   AIC             =  39.26381
+Log likelihood   = -213.9509669                    BIC             =  350.3288
+
+------------------------------------------------------------------------------
+             |                 OIM
+         dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        year |   1.041458   .0143664     2.94   0.003     1.013677    1.069999
+       _cons |   2.74e-37   7.60e-36    -3.04   0.002     7.08e-61    1.06e-13
+   ln(casos) |          1  (exposure)
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "C:\Users\Kramus\AppData\Local\Temp\STD00000000.tmp"
+
+. glm dif i.year, fam(poi) lnoff(casos) ef
+
+Iteration 0:   log likelihood = -40.191328  
+Iteration 1:   log likelihood = -28.915226  
+Iteration 2:   log likelihood = -28.024168  
+Iteration 3:   log likelihood = -27.996106  
+Iteration 4:   log likelihood = -27.996045  
+Iteration 5:   log likelihood = -27.996045  
+
+Generalized linear models                          No. of obs      =        11
+Optimization     : ML                              Residual df     =         0
+                                                   Scale parameter =         1
+Deviance         =  1.68725e-14                    (1/df) Deviance =         .
+Pearson          =  2.86151e-18                    (1/df) Pearson  =         .
+
+Variance function: V(u) = u                        [Poisson]
+Link function    : g(u) = ln(u)                    [Log]
+
+                                                   AIC             =   7.09019
+Log likelihood   = -27.99604518                    BIC             =  1.69e-14
+
+------------------------------------------------------------------------------
+             |                 OIM
+         dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        year |
+       2005  |   7.139314   2.539185     5.53   0.000     3.555626    14.33497
+       2006  |   7.911268   2.785077     5.88   0.000     3.968165    15.77257
+       2007  |   11.95057   4.147672     7.15   0.000     6.052892    23.59469
+       2008  |   2.723394   1.085026     2.51   0.012     1.247336    5.946169
+       2009  |   1.508516   .6651929     0.93   0.351     .6356313    3.580094
+       2010  |   12.02741   4.196676     7.13   0.000     6.069677    23.83298
+       2011  |   .5948954   .3574877    -0.86   0.387     .1832028    1.931742
+       2012  |   14.37681   5.011876     7.65   0.000     7.259833    28.47073
+       2013  |   .1797727    .189497    -1.63   0.104     .0227761    1.418956
+       2014  |   10.80893   3.863761     6.66   0.000     5.364286    21.77977
+             |
+       _cons |   .0116129    .003871   -13.37   0.000     .0060424     .022319
+   ln(casos) |          1  (exposure)
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+
+. do "C:\Users\Kramus\AppData\Local\Temp\STD00000000.tmp"
+
+. glm dif b2013.year, fam(poi) lnoff(casos) ef
+
+Iteration 0:   log likelihood = -40.191328  
+Iteration 1:   log likelihood = -28.915226  
+Iteration 2:   log likelihood = -28.024168  
+Iteration 3:   log likelihood = -27.996106  
+Iteration 4:   log likelihood = -27.996045  
+Iteration 5:   log likelihood = -27.996045  
+
+Generalized linear models                          No. of obs      =        11
+Optimization     : ML                              Residual df     =         0
+                                                   Scale parameter =         1
+Deviance         =  7.32461e-15                    (1/df) Deviance =         .
+Pearson          =  2.86151e-18                    (1/df) Pearson  =         .
+
+Variance function: V(u) = u                        [Poisson]
+Link function    : g(u) = ln(u)                    [Log]
+
+                                                   AIC             =   7.09019
+Log likelihood   = -27.99604518                    BIC             =  7.32e-15
+
+------------------------------------------------------------------------------
+             |                 OIM
+         dif |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        year |
+       2004  |   5.562581   5.863475     1.63   0.104     .7047436    43.90576
+       2005  |   39.71301   40.01733     3.65   0.000     5.510723    286.1917
+       2006  |   44.00707   44.28827     3.76   0.000     6.121838    316.3465
+       2007  |   66.47601   66.78592     4.18   0.000     9.278869    476.2498
+       2008  |    15.1491   15.50559     2.66   0.008     2.037765     112.621
+       2009  |   8.391241    8.73388     2.04   0.041     1.091107    64.53344
+       2010  |   66.90342   67.25835     4.18   0.000     9.326766    479.9163
+       2011  |   3.309154   3.699746     1.07   0.284     .3698662    29.60664
+       2012  |   79.97217   80.38762     4.36   0.000     11.15104    573.5381
+       2014  |   60.12552    60.6245     4.06   0.000     8.332845    433.8349
+             |
+       _cons |   .0020877   .0020877    -6.17   0.000     .0002941    .0148206
+   ln(casos) |          1  (exposure)
+------------------------------------------------------------------------------
+
