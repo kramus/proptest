@@ -1,0 +1,296 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data Analysis      
+      
+      -------------------------------------------------------------------------------
+            name:  <unnamed>
+             log:  C:\Users\Estudiante\Desktop\proptest-master\newcases.smcl
+        log type:  smcl
+       opened on:  29 Oct 2015, 09:28:45
+      
+     1 . do "C:\Users\ESTUDI~1\AppData\Local\Temp\STD00000000.tmp"
+      
+     2 . glm newcases year if tipo=="MSM", fam(poi) ef
+      
+      Iteration 0:   log likelihood =   -48.7286  
+      Iteration 1:   log likelihood =  -48.67113  
+      Iteration 2:   log likelihood =  -48.67113  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =        10
+                                                         Scale parameter =         1
+      Deviance         =  11.41777788                    (1/df) Deviance =  1.141778
+      Pearson          =  11.20964669                    (1/df) Pearson  =  1.120965
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  8.445188
+      Log likelihood   = -48.67112959                    BIC             = -13.43129
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+          newcases |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |   1.065457   .0062317    10.84   0.000     1.053312    1.077741
+             _cons |   1.02e-53   1.19e-52   -10.38   0.000     1.01e-63    1.02e-43
+      ------------------------------------------------------------------------------
+      
+     3 . glm newcases year if tipo=="IDU", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -51.490951  
+      Iteration 1:   log likelihood = -50.897869  
+      Iteration 2:   log likelihood = -50.897732  
+      Iteration 3:   log likelihood = -50.897732  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =        10
+                                                         Scale parameter =         1
+      Deviance         =  20.64776232                    (1/df) Deviance =  2.064776
+      Pearson          =  21.25032354                    (1/df) Pearson  =  2.125032
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  8.816289
+      Log likelihood   =  -50.8977322                    BIC             = -4.201304
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+          newcases |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |   .8797917   .0063068   -17.87   0.000     .8675171    .8922401
+             _cons |   7.2e+113   1.0e+115    18.22   0.000     4.1e+101    1.3e+126
+      ------------------------------------------------------------------------------
+      
+     4 . 
+     5 . glm newcases i.year if tipo=="MSM", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -43.103774  
+      Iteration 1:   log likelihood = -42.962273  
+      Iteration 2:   log likelihood = -42.962241  
+      Iteration 3:   log likelihood = -42.962241  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =         0
+                                                         Scale parameter =         1
+      Deviance         =  6.21725e-14                    (1/df) Deviance =         .
+      Pearson          =  7.87968e-26                    (1/df) Pearson  =         .
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  9.160373
+      Log likelihood   = -42.96224065                    BIC             =  6.22e-14
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+          newcases |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2004  |   1.125984   .1372917     0.97   0.330     .8866352    1.429946
+             2005  |   1.362205   .1591762     2.65   0.008     1.083373    1.712801
+             2006  |   1.354331   .1584507     2.59   0.010     1.076807     1.70338
+             2007  |   1.496063    .171475     3.51   0.000     1.195053    1.872891
+             2008  |   1.685039   .1887463     4.66   0.000     1.352896    2.098726
+             2009  |    1.76378   .1959169     5.11   0.000     1.418713    2.192775
+             2010  |   1.889764   .2073639     5.80   0.000     1.524071    2.343203
+             2011  |    1.92126   .2102211     5.97   0.000     1.550419    2.380801
+             2012  |   2.133858   .2294672     7.05   0.000     1.728345    2.634515
+             2013  |   2.125984   .2287555     7.01   0.000     1.721753     2.62512
+             2014  |   2.023622    .219496     6.50   0.000     1.636071    2.502975
+                   |
+             _cons |        127   11.26943    54.59   0.000     106.7264    151.1248
+      ------------------------------------------------------------------------------
+      
+     6 . glm newcases i.year if tipo=="IDU", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -41.687049  
+      Iteration 1:   log likelihood = -40.576418  
+      Iteration 2:   log likelihood = -40.573851  
+      Iteration 3:   log likelihood = -40.573851  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =         0
+                                                         Scale parameter =         1
+      Deviance         =  7.95694e-15                    (1/df) Deviance =         .
+      Pearson          =  3.66668e-17                    (1/df) Pearson  =         .
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  8.762309
+      Log likelihood   = -40.57385104                    BIC             =  7.96e-15
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+          newcases |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2004  |   .8314607   .0755204    -2.03   0.042     .6958703    .9934708
+             2005  |   .8988764   .0799545    -1.20   0.231     .7550682    1.070074
+             2006  |   .7677903   .0712986    -2.85   0.004     .6400269    .9210579
+             2007  |   .6067416   .0604254    -5.02   0.000     .4991518    .7375218
+             2008  |   .6928839   .0662809    -3.84   0.000     .5744272    .8357683
+             2009  |   .4719101   .0510052    -6.95   0.000     .3818205    .5832561
+             2010  |   .3820225   .0444679    -8.27   0.000     .3040941     .479921
+             2011  |   .3370787   .0410855    -8.92   0.000     .2654489    .4280373
+             2012  |   .3183521   .0396473    -9.19   0.000     .2494018    .4063644
+             2013  |    .329588   .0405125    -9.03   0.000     .2590258    .4193724
+             2014  |   .2247191   .0321057   -10.45   0.000     .1698355    .2973388
+                   |
+             _cons |        267   16.34013    91.30   0.000     236.8201     301.026
+      ------------------------------------------------------------------------------
+      
+
+
+
+
+   
+      
+    13 . display "MODELOS DE POISSON PARA #MUERTES (MSM & IDU)"
+      MODELOS DE POISSON PARA #MUERTES (MSM & IDU)
+      
+
+
+    14 . do "C:\Users\ESTUDI~1\AppData\Local\Temp\STD00000000.tmp"
+      
+    15 . glm muertes year if tipo=="MSM", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -41.665846  
+      Iteration 1:   log likelihood =  -41.66182  
+      Iteration 2:   log likelihood =  -41.66182  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =        10
+                                                         Scale parameter =         1
+      Deviance         =  8.408408655                    (1/df) Deviance =  .8408409
+      Pearson          =  8.161801333                    (1/df) Pearson  =  .8161801
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =   7.27697
+      Log likelihood   = -41.66181995                    BIC             = -16.44066
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           muertes |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |   .9658961   .0089225    -3.76   0.000     .9485656    .9835432
+             _cons |   1.52e+32   2.82e+33     3.99   0.000     2.46e+16    9.36e+47
+      ------------------------------------------------------------------------------
+      
+    16 . glm muertes year if tipo=="IDU", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -63.310157  
+      Iteration 1:   log likelihood = -63.082449  
+      Iteration 2:   log likelihood = -63.082441  
+      Iteration 3:   log likelihood = -63.082441  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =        10
+                                                         Scale parameter =         1
+      Deviance         =  35.93068687                    (1/df) Deviance =  3.593069
+      Pearson          =  35.94788099                    (1/df) Pearson  =  3.594788
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  10.84707
+      Log likelihood   = -63.08244102                    BIC             =  11.08162
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           muertes |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |   .9223882   .0045062   -16.54   0.000     .9135983    .9312627
+             _cons |   8.73e+72   8.56e+73    17.12   0.000     3.92e+64    1.95e+81
+      ------------------------------------------------------------------------------
+      
+    17 . 
+    18 . glm muertes i.year if tipo=="MSM", fam(poi) ef
+      
+      Iteration 0:   log likelihood =   -37.4717  
+      Iteration 1:   log likelihood = -37.457617  
+      Iteration 2:   log likelihood = -37.457616  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =         0
+                                                         Scale parameter =         1
+      Deviance         =  6.37395e-14                    (1/df) Deviance =         .
+      Pearson          =  1.66407e-14                    (1/df) Pearson  =         .
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  8.242936
+      Log likelihood   = -37.45761562                    BIC             =  6.37e-14
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           muertes |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2004  |   1.153846   .1652573     1.00   0.318     .8714376    1.527775
+             2005  |   1.021978   .1506913     0.15   0.883     .7654755    1.364432
+             2006  |    .989011   .1470275    -0.07   0.941     .7390274    1.323554
+             2007  |   .9230769   .1396679    -0.53   0.597     .6861914     1.24174
+             2008  |   .9450549   .1421261    -0.38   0.707     .7037939     1.26902
+             2009  |    .989011   .1470275    -0.07   0.941     .7390274    1.323554
+             2010  |   .7582418   .1210382    -1.73   0.083     .5545367    1.036776
+             2011  |   .8791209   .1347352    -0.84   0.401     .6510171    1.187148
+             2012  |   .6263736    .105805    -2.77   0.006      .449833    .8721992
+             2013  |   .8021978   .1260437    -1.40   0.161     .5895737    1.091503
+             2014  |   .8131868   .1272904    -1.32   0.186     .5983418    1.105176
+                   |
+             _cons |         91   9.539392    43.03   0.000     74.09881    111.7562
+      ------------------------------------------------------------------------------
+      
+    19 . glm muertes i.year if tipo=="IDU", fam(poi) ef
+      
+      Iteration 0:   log likelihood = -45.693544  
+      Iteration 1:   log likelihood = -45.117482  
+      Iteration 2:   log likelihood = -45.117098  
+      Iteration 3:   log likelihood = -45.117098  
+      
+      Generalized linear models                          No. of obs      =        12
+      Optimization     : ML                              Residual df     =         0
+                                                         Scale parameter =         1
+      Deviance         =  9.05942e-14                    (1/df) Deviance =         .
+      Pearson          =  1.01241e-21                    (1/df) Pearson  =         .
+      
+      Variance function: V(u) = u                        [Poisson]
+      Link function    : g(u) = ln(u)                    [Log]
+      
+                                                         AIC             =  9.519516
+      Log likelihood   = -45.11709758                    BIC             =  9.06e-14
+      
+      ------------------------------------------------------------------------------
+                   |                 OIM
+           muertes |        IRR   Std. Err.      z    P>|z|     [95% Conf. Interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2004  |   .9580247   .0680565    -0.60   0.546     .8335059    1.101145
+             2005  |   1.120988     .07662     1.67   0.095     .9804396    1.281684
+             2006  |    .962963   .0683177    -0.53   0.595     .8379552     1.10662
+             2007  |   .7851852   .0588302    -3.23   0.001     .6779468    .9093866
+             2008  |   .8345679   .0614851    -2.45   0.014     .7223557    .9642114
+             2009  |   .7382716   .0562911    -3.98   0.000     .6357912    .8572703
+             2010  |   .6444444   .0511534    -5.54   0.000     .5515952    .7529229
+             2011  |   .6617284   .0521066    -5.24   0.000      .567092    .7721578
+             2012  |   .5209877   .0442333    -7.68   0.000     .4411214    .6153139
+             2013  |   .4790123   .0418246    -8.43   0.000     .4036683    .5684192
+             2014  |   .3901235   .0365932   -10.04   0.000     .3246088    .4688608
+                   |
+             _cons |        405   20.12461   120.83   0.000     367.4164    446.4281
+      ------------------------------------------------------------------------------
+      
+    20 . 
+      end of do-file
+      
+    21 . translate newcases.smcl newcases.txt
+      file newcases.txt already exists
+      r(602);
+      

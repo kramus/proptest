@@ -91,3 +91,26 @@ lincom  _Itipo_2, rrr
 lincom  _Itipo_2 + _ItipXcat_2_2, rrr
 lincom  _Itipo_2 + _ItipXcat_2_3, rrr
 lincom  _Itipo_2 + _ItipXcat_2_4, rrr
+
+
+
+******************************************
+***Analisis de casos nuevos (MSM & IDU)***
+******************************************
+
+glm newcases year if tipo=="MSM", fam(poi) ef
+glm newcases year if tipo=="IDU", fam(poi) ef
+
+glm newcases i.year if tipo=="MSM", fam(poi) ef
+glm newcases i.year if tipo=="IDU", fam(poi) ef
+
+
+**********************************
+*Analisis de #muertes (MSM & IDU)*
+**********************************
+
+glm muertes year if tipo=="MSM", fam(poi) ef
+glm muertes year if tipo=="IDU", fam(poi) ef
+
+glm muertes i.year if tipo=="MSM", fam(poi) ef
+glm muertes i.year if tipo=="IDU", fam(poi) ef
