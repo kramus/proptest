@@ -65,12 +65,7 @@
       ------------------------------------------------------------------------------
       
      4 . 
-     5 . glm newcases i.year if tipo=="MSM", fam(poi) ef
-      
-      Iteration 0:   log likelihood = -43.103774  
-      Iteration 1:   log likelihood = -42.962273  
-      Iteration 2:   log likelihood = -42.962241  
-      Iteration 3:   log likelihood = -42.962241  
+      glm newcases i.year if tipo=="MSM", fam(poi) ef
       
       Generalized linear models                          No. of obs      =        12
       Optimization     : ML                              Residual df     =         0
@@ -104,12 +99,7 @@
              _cons |        127   11.26943    54.59   0.000     106.7264    151.1248
       ------------------------------------------------------------------------------
       
-     6 . glm newcases i.year if tipo=="IDU", fam(poi) ef
-      
-      Iteration 0:   log likelihood = -41.687049  
-      Iteration 1:   log likelihood = -40.576418  
-      Iteration 2:   log likelihood = -40.573851  
-      Iteration 3:   log likelihood = -40.573851  
+      glm newcases i.year if tipo=="IDU", fam(poi) ef
       
       Generalized linear models                          No. of obs      =        12
       Optimization     : ML                              Residual df     =         0
@@ -209,12 +199,8 @@
              _cons |   8.73e+72   8.56e+73    17.12   0.000     3.92e+64    1.95e+81
       ------------------------------------------------------------------------------
       
-    17 . 
-    18 . glm muertes i.year if tipo=="MSM", fam(poi) ef
-      
-      Iteration 0:   log likelihood =   -37.4717  
-      Iteration 1:   log likelihood = -37.457617  
-      Iteration 2:   log likelihood = -37.457616  
+  
+     glm muertes i.year if tipo=="MSM", fam(poi) ef
       
       Generalized linear models                          No. of obs      =        12
       Optimization     : ML                              Residual df     =         0
@@ -248,12 +234,7 @@
              _cons |         91   9.539392    43.03   0.000     74.09881    111.7562
       ------------------------------------------------------------------------------
       
-    19 . glm muertes i.year if tipo=="IDU", fam(poi) ef
-      
-      Iteration 0:   log likelihood = -45.693544  
-      Iteration 1:   log likelihood = -45.117482  
-      Iteration 2:   log likelihood = -45.117098  
-      Iteration 3:   log likelihood = -45.117098  
+     glm muertes i.year if tipo=="IDU", fam(poi) ef
       
       Generalized linear models                          No. of obs      =        12
       Optimization     : ML                              Residual df     =         0

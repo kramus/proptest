@@ -1,9 +1,5 @@
-. glm dif year, fam(poi) lnoff(casos) ef
+glm dif year, fam(poi) lnoff(casos) ef
 
-Iteration 0:   log likelihood = -215.14396  
-Iteration 1:   log likelihood = -213.95228  
-Iteration 2:   log likelihood = -213.95097  
-Iteration 3:   log likelihood = -213.95097  
 
 Generalized linear models                          No. of obs      =        11
 Optimization     : ML                              Residual df     =         9
